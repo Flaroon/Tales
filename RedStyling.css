@@ -111,6 +111,10 @@ body {
   position: absolute;
   left: 15px;
   top: 15px;
+  transition: 0.2s;
+}
+
+.menubutton:hover{
   filter: invert();
   transition: 0.2s;
 }
@@ -122,13 +126,18 @@ body {
   width: 20%;
 }
 
-.textthings {
-  margin-left: 350px;
-  margin-right: 350px;
+.textthings{
+  margin-left: 380px;
+  margin-right: 300px;
   font-family: sora;
   font-size: 25px;
 }
 
+.ad1{
+  padding-left: 3%;
+  padding-top: 3%;
+  position: absolute;
+}
 .Menu {
   position: fixed;
   top: 50%;
@@ -178,4 +187,30 @@ iframe {
   font-family: fancy;
   font-size: 70px;
   text-align: center;
+}
+
+.textthings a{
+  margin-left: 380px;
+  margin-right: 300px;
+  font-family: sora;
+  text-align: center;
+  font-size: 40px;
+  text-decoration: none;
+  color: var(--raisin-black);
+  transition: 0.4s;
+}
+
+.textthings a {
+  background:
+    linear-gradient(to right, var(--red), var(--red)),
+    linear-gradient(to right, var(--raisin-black), var(--raisin-black), var(--raisin-black));
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+a:hover,
+a:focus {
+  background-size: 0 0.1em, 100% 0.1em;
 }

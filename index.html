@@ -10,6 +10,7 @@
 <body id="background" onload="hide()" style="opacity: 0">
 
   <h1 id="title" class="blur">~ Into The Tales ~</h1>
+  <h2 id="title" class="blur">The History of Tales</h2>
   <div class="Menu">
     <ul>
       <li><a onclick="AboutPageTrans()">About Us</a></li>
@@ -52,10 +53,12 @@
     InMenu = !InMenu;
     if (InMenu) {
       menu.style.opacity = "0";
-      menubutton.style.transform = "rotate(0deg)";
+      menubutton.style.transform = "rotate(0deg) scale(1)";
+      menubutton.src = "images/menu.png"
     } else {
       menu.style.opacity = "1";
-      menubutton.style.transform = "rotate(90deg)";
+      menubutton.style.transform = "rotate(90deg) scale(.7)";
+      menubutton.src = "images/CloseMenu.png"
     }
 
     menu.style.transition = "0.4s";

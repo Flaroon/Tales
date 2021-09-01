@@ -39,6 +39,7 @@
 
 html{
   scroll-behavior: smooth;
+  overflow-y: overlay;
 }
 
 body {
@@ -101,14 +102,14 @@ body h1{
 
 .menubutton{
   width: 4%;
-  filter: invert();
   display: block;
   margin-left: auto;
   margin-right: auto;
   z-index: 10;
+  transition: 0.2s;
 }
 .menubutton:hover{
-  transform: scale(1.1);
+  filter: invert();
   transition: 0.2s;
 }
 .Menu{

@@ -57,10 +57,12 @@
     InMenu = !InMenu;
     if (InMenu) {
       menu.style.opacity = "0";
-      menubutton.style.transform = "rotate(0deg)";
+      menubutton.style.transform = "rotate(0deg) scale(1)";
+      menubutton.src = "images/menu.png"
     } else {
       menu.style.opacity = "1";
-      menubutton.style.transform = "rotate(90deg)";
+      menubutton.style.transform = "rotate(90deg) scale(.7)";
+      menubutton.src = "images/CloseMenu.png"
     }
 
     menu.style.transition = "0.4s";

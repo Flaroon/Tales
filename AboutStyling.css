@@ -36,6 +36,9 @@
   font-family: space;
 }
 
+html{
+  overflow-y: overlay;
+}
 
 body {
   background: linear-gradient(90deg, var(--raisin-black) 20%, var(--english-violet) 20%, var(--english-violet) 40%, var(--marigold) 40%, var(--marigold) 60%, var(--black) 60%, var(--black) 80%, var(--red) 80%);
@@ -89,7 +92,6 @@ body h1 {
 
 .menubutton {
   width: 4%;
-  filter: invert();
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -97,8 +99,8 @@ body h1 {
 }
 
 .menubutton:hover {
-  transform: scale(1.1);
-  transition: 0.2s;
+filter: invert();
+ transition: 0.2s;
 }
 
 .Menu {

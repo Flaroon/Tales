@@ -107,9 +107,13 @@ body {
   position: absolute;
   left: 15px;
   top: 15px;
-  filter: invert();
   transition: 0.2s;
   z-index: 50;
+}
+
+.menubutton:hover {
+  filter: invert();
+  transition: 0.2s;
 }
 
 .humptyimg {
@@ -120,10 +124,16 @@ body {
 }
 
 p {
-  margin-left: 250px;
+  margin-left: 300px;
   margin-right: 250px;
   font-family: sora;
   font-size: 25px;
+}
+
+.ad2 {
+  padding-left: 3%;
+  padding-top: 3%;
+  position: absolute;
 }
 
 .Menu {

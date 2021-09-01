@@ -14,7 +14,7 @@
   </div>
   <div class="title">
     <img src="images/menu.png" onclick="togleMenu()" class="menubutton">
-    <h1 class="blur">The true story of</h1>
+    <h1 class="blur">The History of</h1>
     <h2 class="blur">Humpty Dumpty</h2>
     <h3 class="blur">brought to you by </h3>
     <h1 class="blur">Into The Tales</h1>
@@ -22,13 +22,15 @@
   </div>
 
   <h1 class="texttit">Humpty Dumpty's History</h1>
+  <img src="images/Ad2.jpg" class="ad2">
   <p class="blur">Humpty Dumpty is a world famous nursery rhyme. Despite it being short and having less lyrics than most rhymes, there isn't one person that hasn't heard the rhyme. Humpty Dumpty is a well-known story. He was sitting against a wall when he fell, and none of the king's men could put him back together. Their horses couldn't either.
-
+<br><br>
 It's one of those timeless nursery rhymes that has been passed down through the centuries. The phrase Humpty Dumpty has been used throughout history and has different meanings. The term "humpty dumpty" was first used in the 17th century to describe brandy cooked with ale, according to the Oxford English Dictionary. It was also a phrase used to characterise a short, clumsy person in the 1700s. It's also a nickname for someone who has consumed too much booze. According to other sources, “humpty Dumpty” ​​was a nickname for someone who was a touch on the hefty side in 15th-century England. In 1797, Samuel Arnold included Humpty Dumpty in his book Juvenile Amusements, which was the earliest documented publication of the character. “Fourscore men and fourscore more / could not make Humpty Dumpty where he was before,” the closing lines read in that rendition. The rhyme appeared in a variety of books during the next century, with different lyrics. Many experts nowadays believe that the nursery rhyme has a deeper significance than the lyrics suggest. Perhaps we should follow the advise of Humpty Dumpty himself, as seen in Lewis Carroll's Through the Looking Glass: "When I use a word, it signifies exactly what I select it to mean—neither more nor less." People will always give nursery rhymes more depth than they were intended to have. Most nursery rhymes are closely related to historical events even though they are used in the modern world as silly, repetitive and enjoyable mini songs for children.
+<br><br>
 There are two main theories as to the origins of this nursery rhyme. The most popular one is that Humpty Dumpty was a nickname for a cannon. During the English Civil War in 1648, a town named Colchester was under siege by the Parliamentarian Troops. ‘Humpty Dumpty’ was used at the walls operated by a soldier supposedly named Jack thompson. It is said that humpty dumpty managed to do hefty amounts of damage to the troops until… It tumbled down the wall. Just like the rhyme goes. The dozens of men who attempted to lift the cannon back to its original location on the wall were unable to do so due to its size and weight. Eventually Colchester surrendered and opened their gates to the Parliamentarian Troops. While the siege of Colchester did take place, it seems doubtful that Humpty Dumpty alludes to anything that happened during the siege because it occurred over a century before Humpty Dumpty was written down and there is no documented link between the two.
-
+<br><br>
 The other theory of Humpty Dumpty’s origin is linked to King Richard III. This is because King Richard the third was called the humpback backed king as mentioned by Shakespeare. He was also linked to humpty dumpty as in a war he fell off his horse and was abandoned by his soldiers. He was supposedly hacked to pieces. Hence the resemblance.
-
+<br><br>
 
 Although there are spectacular theories as to how the rhyme originated, none of which can be proven. It is also highly likely that Humpty Dumpty was just a story created as a riddle for children for their entertainment and people made it more complicated than it actually is.
 </p>
@@ -52,11 +54,13 @@ frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media
     InMenu = !InMenu;
     if (InMenu) {
       menu.style.opacity = "0";
-      menubutton.style.transform = "rotate(0deg)";
+      menubutton.style.transform = "rotate(0deg) scale(1)";
+      menubutton.src = "images/menu.png"
     }
     else{
      menu.style.opacity = "1";
-     menubutton.style.transform = "rotate(90deg)";
+     menubutton.style.transform = "rotate(90deg) scale(.7)";
+     menubutton.src = "images/CloseMenu.png"
    }
 
     menu.style.transition = "0.4s";

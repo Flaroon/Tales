@@ -20,6 +20,7 @@
   --g7: 87.5%;
   --g8: 100%;
 }
+
 /* Fonts */
 @font-face {
   src: url("fonts/sora/Sora-Light.ttf");
@@ -38,7 +39,9 @@
 
 html{
   scroll-behavior: smooth;
+  overflow-y: overlay;
 }
+
 
 body {
   background: linear-gradient(90deg, var(--raisin-black) 20%, var(--english-violet) 20%, var(--english-violet) 40%, var(--marigold) 40%, var(--marigold) 60%, var(--black) 60%, var(--black) 80%, var(--red) 80%);
@@ -69,6 +72,28 @@ body h1{
 
   width: 100%;
   height: 10%;
+}
+
+body h2{
+  font-family: Fancy;
+  text-align: center;
+  font-size: 50px;
+  margin: 0px;
+  padding: 0px;
+
+  margin-top: 5px;
+
+  user-select: none;
+  background:  linear-gradient(to left, var(--raisin-black) 20%, var(--english-violet) 20%, var(--english-violet) 40%, var(--marigold) 40%, var(--marigold) 60%, var(--black) 60%, var(--black) 80%, var(--red) 80%);
+  background-size: 500% 100%;
+  background-repeat: no-repeat;
+  background-position: var(--g6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  width: 100%;
+  height: 10%;
+
 }
 
 /* Regions */
@@ -199,7 +224,6 @@ body h1{
 
 img{
   width: 4%;
-  filter: invert();
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -207,7 +231,7 @@ img{
   transition: 0.2s;
 }
 img:hover{
-  transform: scale(1.1);
+  filter: invert();
   transition: 0.2s;
 }
 .Menu{
