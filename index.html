@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="IndexStyling.css">
+
+  <title>Home</title>
+</head>
+
+<body id="background" onload="hide()" style="opacity: 0">
+
+  <h1 id="title" class="blur">~ Into The Tales ~</h1>
+  <div class="Menu">
+    <ul>
+      <li><a onclick="AboutPageTrans()">About Us</a></li>
+      <li><a onclick="ContactPageTrans()">Contact Us</a></li>
+    </ul>
+  </div>
+  <img src="images/menu.png" align="center" onclick="togleMenu()" class="menubutton">
+  <div class="LeftHalf blur" id="lh">
+    <button class="hum blur" id="humpt" onclick="HumptyTransition()">
+      <span>Humpty dumpty</span>
+    </button>
+  </div>
+  <div class="RightHalf blur" id="rh">
+    <button class="red blur" id="redrid" onclick="redTransition()">
+      <span>Little Red Riding Hood</span>
+    </button>
+  </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+  var split = document.getElementById("background");
+  var titl = document.getElementById("title");
+
+  var rh = document.getElementById("rh");
+  var lh = document.getElementById("lh");
+
+  var hump = document.getElementById("humpt");
+  var red = document.getElementById("redrid");
+
+  var blurs = document.getElementsByClassName("blur");
+
+  var menu = document.getElementsByClassName("Menu")[0];
+  var menubutton = document.getElementsByClassName("menubutton")[0];
+
+  var InMenu = true;
+
+  const togleMenu = async () => {
+    InMenu = !InMenu;
+    if (InMenu) {
+      menu.style.opacity = "0";
+      menubutton.style.transform = "rotate(0deg)";
+    } else {
+      menu.style.opacity = "1";
+      menubutton.style.transform = "rotate(90deg)";
+    }
+
+    menu.style.transition = "0.4s";
+    BlurAll();
+  }
+  const HumptyTransition = async () => {
+    FadeAll();
+
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    split.style.backgroundPosition = "0%"
+    split.style.transition = "1s";
+    lh.style.width = "100%";
+    lh.style.transition = "1s";
+    titl.style.backgroundPosition = "0%";
+    titl.style.transition = "1s";
+
+
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    window.location.href = "HumptyPage.html";
+
+  }
+  const redTransition = async () => {
+    FadeAll();
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    rh.style.width = "100%";
+    rh.style.transition = "1s";
+
+    titl.style.backgroundPosition = "100%";
+    titl.style.transition = "1s";
+    split.style.backgroundPosition = "100%"
+    split.style.transition = "1s";
+
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    window.location.href = "RedRidingHood.html";
+  }
+
+  function FadeAll() {
+
+    titl.style.opacity = "0";
+    rh.style.opacity = "0";
+    lh.style.opacity = "0";
+    split.style.opacity = "0";
+
+    titl.style.transition = "1s";
+    rh.style.transition = "1s";
+    lh.style.transition = "1s";
+    split.style.transition = "1s";
+  }
+  const hide = async () => {
+
+    titl.style.opacity = "0";
+    rh.style.opacity = "0";
+    lh.style.opacity = "0";
+    split.style.opacity = "0";
+    await new Promise(resolve => setTimeout(resolve, 100));
+    FadeAllin();
+  }
+
+  function FadeAllin() {
+
+    titl.style.opacity = "1";
+    rh.style.opacity = "1";
+    lh.style.opacity = "1";
+    split.style.opacity = "1";
+
+    titl.style.transition = "1s";
+    rh.style.transition = "1s";
+    lh.style.transition = "1s";
+    split.style.transition = "1s";
+  }
+  const BlurAll = async () => {
+    if (InMenu) {
+      for (var i = 0; i < blurs.length; i++) {
+        blurs[i].style.filter = "blur(0px)";
+        blurs[i].style.opacity = "1"
+        blurs[i].style.transition = "1s";
+      }
+      menu.style.pointerEvents = "none";
+      menu.style.cursor = "default";
+    } else {
+      for (var i = 0; i < blurs.length; i++) {
+        blurs[i].style.filter = "blur(2px)";
+        blurs[i].style.opacity = "0.7"
+        blurs[i].style.transition = "1s";
+      }
+      menu.style.pointerEvents = "auto";
+      menu.style.cursor = "pointer";
+    }
+  }
+
+  const ContactPageTrans = async () => {
+
+    titl.style.opacity = "0";
+    rh.style.opacity = "0";
+    lh.style.opacity = "0";
+    split.style.opacity = "0";
+
+    titl.style.transition = "1s";
+    rh.style.transition = "1s";
+    lh.style.transition = "1s";
+    split.style.transition = "1s";
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    split.style.backgroundPosition = "87.5%"
+    split.style.transition = "1s";
+
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    window.location.href = "ContactPage.html";
+
+  }
+  const AboutPageTrans = async () => {
+
+    titl.style.opacity = "0";
+    rh.style.opacity = "0";
+    lh.style.opacity = "0";
+    split.style.opacity = "0";
+
+    titl.style.transition = "1s";
+    rh.style.transition = "1s";
+    lh.style.transition = "1s";
+    split.style.transition = "1s";
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    split.style.backgroundPosition = "12.5%"
+    split.style.transition = "1s";
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    window.location.href = "About.html";
+
+  }
+</script>

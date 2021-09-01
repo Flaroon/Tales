@@ -1,0 +1,187 @@
+/* Variables */
+:root {
+  --english-violet: #44355bff;
+  --dark-purple: #31263eff;
+  --raisin-black: #221e22ff;
+  --marigold: #eca72cff;
+  --flame: #ee5622ff;
+  --black: #474350ff;
+  --pink: #ffc6d9ff;
+  --red: #d44d5cff;
+  --yellow: #fff7aeff;
+  --blue: #759aabff;
+  --TransitionSpeed: 0.4s;
+  --g1: 0%;
+  --g2: 12.5%;
+  --g3: 25%;
+  --g4: 37.5%;
+  --g5: 50%;
+  --g6: 62.5%;
+  --g7: 87.5%;
+  --g8: 100%;
+}
+
+/* Fonts */
+@font-face {
+  src: url("fonts/sora/Sora-Light.ttf");
+  font-family: sora;
+}
+
+@font-face {
+  src: url("fonts/Fancy/DancingScript-Regular.ttf");
+  font-family: Fancy;
+}
+
+@font-face {
+  src: url("fonts/Space/SpaceMono-Regular.ttf");
+  font-family: space;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(90deg, var(--raisin-black) 20%, var(--english-violet) 20%, var(--english-violet) 40%, var(--marigold) 40%, var(--marigold) 60%, var(--black) 60%, var(--black) 80%, var(--red) 80%);
+  background-attachment: fixed;
+  background-size: 500% 100%;
+  background-repeat: no-repeat;
+  background-position: var(--g7);
+  margin: 0px;
+  padding: 0px;
+}
+
+body h1{
+  font-family: Fancy;
+  text-align: center;
+  font-size: 160px;
+  margin: 0px;
+  padding: 0px;
+
+  margin-top: 5px;
+
+  user-select: none;
+  background:  linear-gradient(to left, var(--raisin-black) 20%, var(--english-violet) 20%, var(--english-violet) 40%, var(--marigold) 40%, var(--marigold) 60%, var(--black) 60%, var(--black) 80%, var(--red) 80%);
+  background-size: 500% 100%;
+  background-repeat: no-repeat;
+  background-position: var(--g2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  width: 100%;
+  height: 10%;
+}
+
+/* Regions */
+
+
+.LeftHalf {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+
+  width: 50%;
+  height: 80%;
+  z-index: -10;
+
+  display: grid;
+  place-items: center;
+}
+.RightHalf {
+  position: absolute;
+  bottom: 5%;
+  right: 0;
+
+  width: 50%;
+  height: 80%;
+  z-index: -10;
+  display: grid;
+  place-items: center;
+}
+
+.menubutton{
+  width: 4%;
+  filter: invert();
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 10;
+}
+.menubutton:hover{
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+.Menu{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 250px;
+    border: 3px #ffffff50 solid;
+    background-color: #ffffff20;
+    display: grid;
+    place-items: center;
+
+    filter: drop-shadow(5px 5px #ffffff20);
+    opacity: 0;
+    z-index: 3;
+
+    pointer-events: none;
+
+}
+
+.Menu a{
+  color: white;
+  font-family: space;
+  font-size: 50px;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.Menu a:hover{
+  font-size: 55px;
+  transition: 0.3s;
+}
+
+.Menu ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.logo{
+  width: 70%;
+}
+input[type=text], select, textarea {
+
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-family: space;
+}
+
+label{
+}
+
+input[type=submit] {
+  color: var(--black);
+  text-align: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-family: space;
+}
+
+.container {
+  padding: 20px;
+  width: 50%;
+  font-family: space;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+}

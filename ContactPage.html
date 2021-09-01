@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="ContactStyling.css">
+  <title>Contact Us</title>
+</head>
+
+<body onload="hide()" id="bg" style="opacity: 0">
+  <h1 id="title" class="blur">Contact Us</h1>
+  <div class="Menu">
+    <ul>
+      <li><a onclick="FadeAll()">Home</a></li>
+      <li><a onclick="fadetoaboutus()">About Us</a></li>
+    </ul>
+  </div>
+  <img src="images/menu.png" align="center" onclick="togleMenu()" class="menubutton">
+  <div class="LeftHalf blur" id="lh">
+    <img class="logo" src="images/logo.png">
+  </div>
+  <div class="RightHalf blur" id="rh">
+
+    <div class="container" id="bg" >
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+  var blurs = document.getElementsByClassName("blur");
+  var menu = document.getElementsByClassName("Menu")[0];
+  var menubutton = document.getElementsByClassName("menubutton")[0];
+  var background = document.getElementById("bg");
+  var InMenu = true;
+
+  const togleMenu = async () => {
+    InMenu = !InMenu;
+    if (InMenu) {
+      menu.style.opacity = "0";
+      menubutton.style.transform = "rotate(0deg)";
+    } else {
+      menu.style.opacity = "1";
+      menubutton.style.transform = "rotate(90deg)";
+    }
+
+    menu.style.transition = "0.4s";
+    BlurAll();
+  }
+
+  const FadeAll = async () => {
+    background.style.opacity = "0";
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    background.style.backgroundPosition = "37.5%";
+    background.style.transition = "1s";
+
+
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    window.location.href = "index.html";
+  }
+    const fadetoaboutus = async () => {
+      background.style.opacity = "0";
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      background.style.backgroundPosition = "12.5%";
+      background.style.transition = "1s";
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      window.location.href = "About.html";
+    }
+  const hide = async () => {
+
+    background.style.opacity = "0";
+    await new Promise(resolve => setTimeout(resolve, 100));
+    FadeAllin();
+  }
+
+  function FadeAllin() {
+    background.style.opacity = "1";
+    background.style.transition = "1s";
+  }
+
+
+  const BlurAll = async () => {
+    if (InMenu) {
+      for (var i = 0; i < blurs.length; i++) {
+        blurs[i].style.filter = "blur(0px)";
+        blurs[i].style.opacity = "1"
+        blurs[i].style.transition = "1s";
+      }
+      menu.style.pointerEvents="none";
+      menu.style.cursor="default";
+    } else {
+      for (var i = 0; i < blurs.length; i++) {
+        blurs[i].style.filter = "blur(2px)";
+        blurs[i].style.opacity = "0.7"
+        blurs[i].style.transition = "1s";
+      }
+      menu.style.pointerEvents="auto";
+      menu.style.cursor="pointer";
+    }
+  }
+</script>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="AboutStyling.css">
+
+  <title>About Us</title>
+</head>
+
+<body class="background" onload="FadeIn()" style="opacity: 0">
+
+  <h1 id="title" class="blur">About Us</h1>
+  <div class="Menu">
+    <ul>
+      <li><a onclick="GoTohome()">Home</a></li>
+      <li><a onclick="GoToContact()">Contact Us</a></li>
+    </ul>
+  </div>
+  <img src="images/menu.png" align="center" onclick="togleMenu()" class="menubutton">
+  <div class="LeftHalf blur" id="lh">
+  </div>
+  <div class="RightHalf blur" id="rh">
+  </div>
+</body>
+
+</html>
+<script>
+  var menu = document.getElementsByClassName("Menu")[0];
+  var menubutton = document.getElementsByClassName("menubutton")[0];
+  var blurs = document.getElementsByClassName("blur");
+  var backg = document.getElementsByClassName("background")[0];
+  var InMenu = true;
+
+  const togleMenu = async () => {
+    InMenu = !InMenu;
+    if (InMenu) {
+      menu.style.opacity = "0";
+      menubutton.style.transform = "rotate(0deg)";
+    } else {
+      menu.style.opacity = "1";
+      menubutton.style.transform = "rotate(90deg)";
+    }
+
+    menu.style.transition = "0.4s";
+    BlurAll();
+  }
+
+  const BlurAll = async () => {
+    if (InMenu) {
+      for (var i = 0; i < blurs.length; i++) {
+        blurs[i].style.filter = "blur(0px)";
+        blurs[i].style.opacity = "1"
+        blurs[i].style.transition = "1s";
+      }
+      menu.style.pointerEvents="none";
+      menu.style.cursor="default";
+    } else {
+      for (var i = 0; i < blurs.length; i++) {
+        blurs[i].style.filter = "blur(2px)";
+        blurs[i].style.opacity = "0.7"
+        blurs[i].style.transition = "1s";
+      }
+      menu.style.pointerEvents="auto";
+      menu.style.cursor="pointer";
+    }
+  }
+  const FadeIn = async () => {
+    backg.style.opacity = "0%";
+    await new Promise(resolve => setTimeout(resolve, 100));
+
+    backg.style.opacity = "100%";
+    backg.style.transition = "1s";
+  }
+  const GoTohome = async () => {
+    backg.style.opacity = "0";
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    backg.style.backgroundPosition = "37.5%";
+    backg.style.transition = "1s";
+
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    window.location.href = "index.html";
+  }
+  const GoToContact = async () => {
+    backg.style.opacity = "0";
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    backg.style.backgroundPosition = "87.5%";
+    backg.style.transition = "1s";
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    window.location.href = "ContactPage.html";
+  }
+</script>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html class="main">
+  <head>
+    <link rel="stylesheet" href="RedStyling.css">
+    <title>Little Red Riding Hood</title>
+  </head>
+  <body class="fade" onload="hideall()" style="opacity: 0">
+    <div class="Menu">
+      <ul>
+        <li><a onclick="fadeout()">Home</a></li>
+      </ul>
+    </div>
+    <div class="title">
+      <img src="images/menu.png" onclick="togleMenu()" class="menubutton">
+      <h1 class="blur">The true story of</h1>
+      <h2 class="blur toptit">Little red -</h2>
+      <h2 class="blur bottit">riding hood</h2>
+      <h3 class="blur">brought to you by </h3>
+      <h1 class="blur">Into The Tales</h1>
+      <img src="images/RidingHood.png" alt="" class="humptyimg blur">
+    </div>
+
+    <h1 class="texttit">Little Red Riding Hoods History</h1>
+    <p class="blur textthings">Humpty Dumpty is a world famous nursery rhyme. Despite it being short and having less lyrics than most rhymes, there isn't one person that hasn't heard the rhyme. Humpty Dumpty is a well-known story. He was sitting against a wall when he fell, and none of the king's men could put him back together. Their horses couldn't either.
+
+      I’m sure you have all heard the fairytale of a little red riding hood. It’s a bedtime classic. Even though you all know how the story goes, just for some clarity this is how the modern version is told. A little girl in a rade cape is told by her parents to visit her grandmother and on the way, she meets a wolf that has intentions to eat her. The wolf finds out where the little red riding hood is going and races there before her. When Young Red Riding Hood goes to see her grandmother, she discovers that a wolf has devoured the old lady whole and is now planning to eat the little girl as well. In some versions of the story, the grandmother is locked in a closet instead. Now a woodchopper rushes in for the rescue and saves little red riding hood and her grandmother by killing the wolf. Although this is the tale told in modern times, Little Red Riding Hood story dates back several years and has been modified every generation. Jamie Tehrani, an anthropologist at Durham University has been researching the mystery of this tale. His research showed that Folktales are not unlike biological species and evolve as they are told and retold with slight alterations to each one. Tehrani used a method called phylogenetics to find the original tale. It was thought that Charles Perrault and the Grimm brothers invented the tale in the 17th century, but research has shown that it has an origin that dates further back. There have been many theories as to which tale is the original, despite it being impossible to tell. There is an 11th-century Belgium poem that resembles the tale of Little Red Riding Hood. This tale was told by local peasants and recorded by a priest. A popular theory is that the tale originated in China and as it spread it was divided into two tales; “The Wolf and the Kids” and “Little Red Riding Hood”. Although the fact that they split into two tales is true, the tale did not originate in China as the Asian tale resembles the more modern story instead of the ancestral variants. The story of the WOlf and Kids is the following.  A nanny goat advises her children not to open the door for anyone when she leaves them at home. What she doesn't realise is that a wolf is lurking outside the home, listening in on her conversation. The wolf comes to the door and pretends to be the nanny goat while she is out. When he enters, he devours all of the children. The nanny goat chases him down, kills him, and slices open his belly to rescue her children at the end of the story. This story has appealed to so many cultures and generations due to its metaphorical meaning of the wolf. It teaches a very important lesson in life that not everyone is who they seem to be and may have different intentions than what they show.
+
+  </p>
+  <h1 class="texttit">Little Red Riding Hoods Video</h1>
+  <p align="center"> <iframe width="790px" height="422.5px" src="https://www.youtube.com/embed/vPpCcC6MFwo?controls=0" title="YouTube video player"   srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/vPpCcC6MFwo?controls=0><img src=images/ridinghoodthumb.jpg alt='riding Hood video'><span>▶</span></a>"
+frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+  </body>
+
+</html>
+
+<script>
+
+  var fade = document.getElementsByClassName("fade");
+  var blur = document.getElementsByClassName("blur");
+
+  var menu = document.getElementsByClassName("Menu")[0];
+  var menubutton = document.getElementsByClassName("menubutton")[0];
+  var InMenu = true;
+
+  var main = document.getElementsByClassName("main")[0];
+
+  const togleMenu = async () => {
+    InMenu = !InMenu;
+    if (InMenu) {
+      menu.style.opacity = "0";
+      menubutton.style.transform = "rotate(0deg)";
+    }
+    else{
+     menu.style.opacity = "1";
+     menubutton.style.transform = "rotate(90deg)";
+   }
+
+    menu.style.transition = "0.4s";
+    BlurAll();
+  }
+
+  const hideall = async () => {
+    for (var i = 0; i < fade.length; i++) {
+      fade[i].style.opacity = "0";
+    }
+    await new Promise(resolve => setTimeout(resolve, 400));
+
+    fadein();
+  }
+
+  const fadein = async () => {
+    for (var i = 0; i < fade.length; i++) {
+      fade[i].style.opacity = "100%";
+      fade[i].style.transition = "2s";
+    }
+  }
+
+  const fadeout = async () => {
+
+    for (var i = 0; i < fade.length; i++) {
+      fade[i].style.opacity = "0";
+      fade[i].style.transition = "1s";
+    }
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    main.style.backgroundPosition = "37.5%";
+    main.style.transition = "1s";
+    await new Promise(resolve => setTimeout(resolve, 1200));
+    window.location.href = "index.html";
+  }
+
+  const BlurAll = async () => {
+    if (InMenu){
+      for (var i = 0; i < blur.length; i++) {
+        blur[i].style.filter = "blur(0px)";
+        blur[i].style.opacity = "1"
+        blur[i].style.transition = "1s";
+      }
+      menu.style.pointerEvents="none";
+      menu.style.cursor="default";
+    }
+    else{
+      for (var i = 0; i < blur.length; i++) {
+        blur[i].style.filter = "blur(3px)";
+        blur[i].style.opacity = "0.5"
+        blur[i].style.transition = "1s";
+      }
+      menu.style.pointerEvents="auto";
+      menu.style.cursor="pointer";
+    }
+  }
+</script>
