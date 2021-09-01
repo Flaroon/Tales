@@ -40,6 +40,13 @@ html{
   overflow-y: overlay;
 }
 
+.logoimg{
+  top: 25px;
+  left: 25px;
+  position: absolute;
+  width: 100px;
+}
+
 body {
   background: linear-gradient(90deg, var(--raisin-black) 20%, var(--english-violet) 20%, var(--english-violet) 40%, var(--marigold) 40%, var(--marigold) 60%, var(--black) 60%, var(--black) 80%, var(--red) 80%);
   background-attachment: fixed;

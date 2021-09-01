@@ -102,6 +102,12 @@ body {
   display: inline;
 }
 
+.logoimg{
+  top: 25px;
+  right: 25px;
+  position: absolute;
+  width: 100px;
+}
 .menubutton {
   width: 4%;
   position: absolute;
