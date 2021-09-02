@@ -124,6 +124,22 @@ body {
   width: 20%;
 }
 
+marquee{
+  background-color: #e9394e;
+  width: 160px;
+  height: 600px;
+  margin-left: 4%;
+  margin-top: 8%;
+}
+
+marquee img{
+  display: block;
+   height: 600px;
+}
+.ad1 {
+  position: absolute;
+}
+
 .textthings {
   margin-left: 380px;
   margin-right: 300px;
@@ -131,11 +147,6 @@ body {
   font-size: 25px;
 }
 
-.ad1 {
-  padding-left: 3%;
-  padding-top: 12%;
-  position: absolute;
-}
 
 .Menu {
   position: fixed;

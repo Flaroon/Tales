@@ -136,12 +136,21 @@ p {
   font-size: 25px;
 }
 
-.ad2 {
-  padding-left: 3%;
-  padding-top: 3%;
-  position: absolute;
+marquee{
+  background-color: #e9394e;
+  width: 160px;
+  height: 600px;
+  margin-left: 4%;
+  margin-top: 8%;
 }
 
+marquee img{
+  display: block;
+   height: 600px;
+}
+.ad1 {
+  position: absolute;
+}
 .Menu {
   position: fixed;
   top: 50%;
