@@ -1,15 +1,17 @@
 /* Variables */
 :root {
-  --english-violet: #44355bff;
-  --dark-purple: #31263eff;
-  --raisin-black: #221e22ff;
-  --marigold: #eca72cff;
-  --flame: #ee5622ff;
-  --black: #474350ff;
-  --pink: #ffc6d9ff;
-  --red: #d44d5cff;
-  --yellow: #fff7aeff;
-  --blue: #759aabff;
+  --english-violet: #031d44ff;
+  --raisin-black: #04395eff;
+  --marigold: #70a288ff;
+  --black: #dab785ff;
+  --red: #d5896fff;
+
+  --prussian-blue: #0b3954ff;
+  --metallic-seaweed: #087e8bff;
+  --beau-blue: #bfd7eaff;
+  --sizzling-red: #ff5a5fff;
+  --lava: #c81d25ff;
+
   --TransitionSpeed: 0.4s;
   --g1: 0%;
   --g2: 12.5%;
@@ -175,11 +177,19 @@ marquee img{
   font-size: 50px;
   user-select: none;
   cursor: pointer;
+  background:
+    linear-gradient(to right, white, white),
+    linear-gradient(to right, var(--raisin-black), var(--raisin-black), var(--raisin-black));
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
   transition: 0.3s;
 }
 
 .Menu a:hover {
   font-size: 55px;
+  background-size: 0 0.1em, 100% 0.1em;
   transition: 0.3s;
 }
 
@@ -194,4 +204,24 @@ marquee img{
   font-family: fancy;
   font-size: 70px;
   text-align: center;
+}
+
+
+.link{
+  font-family: sora;
+  font-size: 40px;
+  text-decoration: none;
+  margin-left: 35%;
+  color: var(--red);
+  background:
+    linear-gradient(to right, var(--raisin-black), var(--raisin-black)),
+    linear-gradient(to right, var(--red), var(--red), var(--red));
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.link:hover{
+  background-size: 0 0.1em, 100% 0.1em;
 }

@@ -7,6 +7,10 @@
 </head>
 
 <body class="fade" onload="hideall()" style="opacity: 0">
+
+    <audio id="Click" controls hidden="true" preload="auto">
+      <source src="images/Click.mp3" type="audio/mp3">
+    </audio>
   <img src="images/logo.png" class="logoimg">
   <div class="Menu">
     <ul>
@@ -122,9 +126,10 @@
     The three of them were happy. The huntsman took the wolf's pelt. The grandmother ate the cake and drank the wine that Little Red Cap had brought. And Little Red Cap thought to herself, "As long as I live, I will never leave the path and run off
     into the woods by myself if mother tells me not to."
     <br><br><br><br>
-    <a target="#" href="https://sites.pitt.edu/~dash/type0333.html">Site With Original Story</a>
 
   </p>
+  <a target="#" href="https://sites.pitt.edu/~dash/type0333.html" class="link">Site With Original Story</a>
+
   <h1 class="texttit">Little Red Riding Hoods Video</h1>
   <p align="center"> <iframe width="790px" height="422.5px" src="https://www.youtube.com/embed/vPpCcC6MFwo?controls=0" title="YouTube video player"
       srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/vPpCcC6MFwo?controls=0><img src=images/ridinghoodthumb.jpg alt='riding Hood video'><span>▶</span></a>"
@@ -145,6 +150,8 @@
   var main = document.getElementsByClassName("main")[0];
 
   const togleMenu = async () => {
+    PlayAudio();
+
     InMenu = !InMenu;
     if (InMenu) {
       menu.style.opacity = "0";
@@ -177,6 +184,7 @@
   }
 
   const fadeout = async () => {
+    PlayAudio();
 
     for (var i = 0; i < fade.length; i++) {
       fade[i].style.opacity = "0";
@@ -189,6 +197,7 @@
     window.location.href = "index.html";
   }
   const Contact = async () => {
+    PlayAudio();
 
     for (var i = 0; i < fade.length; i++) {
       fade[i].style.opacity = "0";
@@ -201,6 +210,7 @@
     window.location.href = "ContactPage.html";
   }
   const About = async () => {
+    PlayAudio();
 
     for (var i = 0; i < fade.length; i++) {
       fade[i].style.opacity = "0";
@@ -213,6 +223,7 @@
     window.location.href = "About.html";
   }
   const Humpty = async () => {
+    PlayAudio();
 
     for (var i = 0; i < fade.length; i++) {
       fade[i].style.opacity = "0";
@@ -244,4 +255,9 @@
       menu.style.cursor = "pointer";
     }
   }
+
+    function PlayAudio() {
+      var forestaudio = document.getElementById("Click");
+      forestaudio.play();
+    }
 </script>

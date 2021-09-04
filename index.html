@@ -9,9 +9,13 @@
 
 <body id="background" onload="hide()" style="opacity: 0">
 
+  <audio id="Click" controls hidden="true" preload="auto">
+    <source src="images/Click.mp3" type="audio/mp3">
+  </audio>
+
   <h1 id="title" class="blur">~ Into The Tales ~</h1>
-  <h2 id="title" class="blur">The History of Tales</h2>
   <img src="images/logo.png" class="logoimg">
+
   <div class="Menu">
     <ul>
       <li><a onclick="AboutPageTrans()">About Us</a></li>
@@ -51,6 +55,8 @@
   var InMenu = true;
 
   const togleMenu = async () => {
+    PlayAudio();
+
     InMenu = !InMenu;
     if (InMenu) {
       menu.style.opacity = "0";
@@ -66,6 +72,8 @@
     BlurAll();
   }
   const HumptyTransition = async () => {
+    PlayAudio();
+
     FadeAll();
 
     await new Promise(resolve => setTimeout(resolve, 1000));
@@ -83,6 +91,8 @@
 
   }
   const redTransition = async () => {
+    PlayAudio();
+
     FadeAll();
     await new Promise(resolve => setTimeout(resolve, 1000));
 
@@ -121,6 +131,12 @@
     FadeAllin();
   }
 
+  function PlayAudio() {
+    var forestaudio = document.getElementById("Click");
+    forestaudio.play();
+  }
+
+
   function FadeAllin() {
 
     titl.style.opacity = "1";
@@ -134,6 +150,7 @@
     split.style.transition = "1s";
   }
   const BlurAll = async () => {
+
     if (InMenu) {
       for (var i = 0; i < blurs.length; i++) {
         blurs[i].style.filter = "blur(0px)";
@@ -154,6 +171,7 @@
   }
 
   const ContactPageTrans = async () => {
+    PlayAudio();
 
     titl.style.opacity = "0";
     rh.style.opacity = "0";
@@ -175,6 +193,7 @@
 
   }
   const AboutPageTrans = async () => {
+    PlayAudio();
 
     titl.style.opacity = "0";
     rh.style.opacity = "0";

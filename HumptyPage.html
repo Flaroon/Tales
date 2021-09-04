@@ -7,6 +7,12 @@
 </head>
 
 <body class="fade" onload="hideall()" style="opacity: 0">
+
+
+    <audio id="Click" controls hidden="true" preload="auto">
+      <source src="images/Click.mp3" type="audio/mp3">
+    </audio>
+
   <img src="images/logo.png" class="logoimg">
   <div class="Menu">
     <ul>
@@ -50,6 +56,10 @@
     Although there are spectacular theories as to how the rhyme originated, none of which can be proven. It is also highly likely that Humpty Dumpty was just a story created as a riddle for children for their entertainment and people made it more
     complicated than it actually is.
   </p>
+
+  <a target="#" href="http://www.todayifoundout.com/index.php/2013/04/the-origin-of-humpty-dumpty/
+" class="link">Site With Original Story</a>
+
   <p align="center"> <iframe width="790px" height="422.5px" src="https://www.youtube.com/embed/f9d9r9cekIA" title="YouTube video player"
       srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/f9d9r9cekIA><img src=images/HumptyThumb.jpg alt='riding Hood video'><span>▶</span></a>"
       frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
@@ -68,6 +78,8 @@
   var InMenu = true;
 
   const togleMenu = async () => {
+    PlayAudio();
+
     InMenu = !InMenu;
     if (InMenu) {
       menu.style.opacity = "0";
@@ -100,6 +112,7 @@
   }
 
   const fadeout = async () => {
+    PlayAudio();
 
     for (var i = 0; i < fade.length; i++) {
       fade[i].style.opacity = "0";
@@ -114,6 +127,7 @@
   }
 
   const ContactTrans = async () => {
+    PlayAudio();
 
     for (var i = 0; i < fade.length; i++) {
       fade[i].style.opacity = "0";
@@ -128,6 +142,7 @@
   }
 
   const AboutTrans = async () => {
+    PlayAudio();
 
     for (var i = 0; i < fade.length; i++) {
       fade[i].style.opacity = "0";
@@ -142,6 +157,7 @@
   }
 
   const RedTrans = async () => {
+    PlayAudio();
 
     for (var i = 0; i < fade.length; i++) {
       fade[i].style.opacity = "0";
@@ -173,4 +189,9 @@
       menu.style.cursor = "pointer";
     }
   }
+
+    function PlayAudio() {
+      var forestaudio = document.getElementById("Click");
+      forestaudio.play();
+    }
 </script>

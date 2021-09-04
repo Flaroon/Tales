@@ -8,6 +8,11 @@
 </head>
 
 <body class="background" onload="FadeIn()" style="opacity: 0">
+
+
+  <audio id="Click" controls hidden="true" preload="auto">
+    <source src="images/Click.mp3" type="audio/mp3">
+  </audio>
   <img src="images/logo.png" class="logoimg">
   <h1 id="title" class="blur">About Us</h1>
   <div class="Menu">
@@ -17,10 +22,37 @@
     </ul>
   </div>
   <img src="images/menu.png" align="center" onclick="togleMenu()" class="menubutton">
+
+  <p Class="General blur">Welcome to the tales where we expose the dark, hidden secrets of your favourite childhood tales and nursery rhymes. We here at “into the tales” wish to bring you a little bit of magic and a taste of truth. We dig deep into
+    the modern happy versions of fairy tales/nursery rhymes and discover their origins. Many tales are perceived as joyful pastimes for children, although they are based on not so pleasant times and experiences in history. We unmask the unfiltered
+    original versions of children’s rhymes.
+  </p>
+  <h1 class="blur Imagetitle"> Our Inspiration </h1>
+
+    <p class="Inspiration Blur">Our inspiration for this website is to show the history of fairy tales and rhymes to teens, children in adults of the world. As several websites already have just the tales/rhymes for children to read, we wanted to be
+      different and explain teh origins behind teh stories. Our motivation to make this website was Ms Saki in giving us our Year 9 IST Major Project 2.
+    </p>
+
+  <h1 class="blur Imagetitle"> About each of Us </h1>
+
   <div class="LeftHalf blur" id="lh">
+    <img class="pfp" src="images/tirth.jpg" alt="">
+    <div class="IndivAbout">
+          <p class="blur">Hi, I'm Tirth patel. I'm a programmer, game developer and artist. I love faritails (especially the dark ones). I am an avid reader and love spooky stories, mostly books such as the spooks series. I am very happy to be working with such a talented writer for this project to show the teenagers of the world that fairy tales and nursery rhymes often have an interesting backstory. Our goal with this website was to provide an interesting and interactive experience to our visitors.</p>
+    </div>
+
   </div>
   <div class="RightHalf blur" id="rh">
+    <img class="pfp" src="images/rishi.jpg" alt="">
+
+    <div class="IndivAbout">
+      <p class="blur">Hi my name is rishi and i am just going to talk about myself for a bit. I am a coder/writer. I have been obsessed with fairy tales and nursery rhymes for my whole life. I enjoy listening and especially telling tales to children. It expands their imagination and encourages them to challenge the impossible. But as time moves on, older children are no longer interested in fairy tales at all. Now my goal is to make older children such as teenagers interested in fairy tales and nursery rhymes again. So our website was made to hook older kids back into fairy tales by showing them their historical meanings and origins.</p>
+
+    </div>
+
   </div>
+
+
 </body>
 
 </html>
@@ -32,6 +64,8 @@
   var InMenu = true;
 
   const togleMenu = async () => {
+    PlayAudio();
+
     InMenu = !InMenu;
     if (InMenu) {
       menu.style.opacity = "0";
@@ -54,16 +88,16 @@
         blurs[i].style.opacity = "1"
         blurs[i].style.transition = "1s";
       }
-      menu.style.pointerEvents="none";
-      menu.style.cursor="default";
+      menu.style.pointerEvents = "none";
+      menu.style.cursor = "default";
     } else {
       for (var i = 0; i < blurs.length; i++) {
         blurs[i].style.filter = "blur(2px)";
         blurs[i].style.opacity = "0.7"
         blurs[i].style.transition = "1s";
       }
-      menu.style.pointerEvents="auto";
-      menu.style.cursor="pointer";
+      menu.style.pointerEvents = "auto";
+      menu.style.cursor = "pointer";
     }
   }
   const FadeIn = async () => {
@@ -74,6 +108,8 @@
     backg.style.transition = "1s";
   }
   const GoTohome = async () => {
+    PlayAudio();
+
     backg.style.opacity = "0";
     await new Promise(resolve => setTimeout(resolve, 1000));
 
@@ -84,6 +120,8 @@
     window.location.href = "index.html";
   }
   const GoToContact = async () => {
+    PlayAudio();
+
     backg.style.opacity = "0";
     await new Promise(resolve => setTimeout(resolve, 1000));
 
@@ -91,5 +129,10 @@
     backg.style.transition = "1s";
     await new Promise(resolve => setTimeout(resolve, 1000));
     window.location.href = "ContactPage.html";
+  }
+
+  function PlayAudio() {
+    var forestaudio = document.getElementById("Click");
+    forestaudio.play();
   }
 </script>

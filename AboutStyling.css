@@ -1,15 +1,17 @@
 /* Variables */
 :root {
-  --english-violet: #44355bff;
-  --dark-purple: #31263eff;
-  --raisin-black: #221e22ff;
-  --marigold: #eca72cff;
-  --flame: #ee5622ff;
-  --black: #474350ff;
-  --pink: #ffc6d9ff;
-  --red: #d44d5cff;
-  --yellow: #fff7aeff;
-  --blue: #759aabff;
+  --english-violet: #031d44ff;
+  --raisin-black: #04395eff;
+  --marigold: #70a288ff;
+  --black: #dab785ff;
+  --red: #d5896fff;
+
+  --oxford-blue: #031d44ff;
+  --indigo-dye: #04395eff;
+  --polished-pine: #70a288ff;
+  --burlywood: #dab785ff;
+  --copper-crayola: #d5896fff;
+
   --TransitionSpeed: 0.4s;
   --g1: 0%;
   --g2: 12.5%;
@@ -56,7 +58,7 @@ body {
   margin: 0px;
   padding: 0px;}
 
-body h1 {
+#title {
   font-family: Fancy;
   text-align: center;
   font-size: 160px;
@@ -76,23 +78,17 @@ body h1 {
 
 /* Regions */
 .LeftHalf {
-  position: absolute;
-  bottom: 5%;
-  left: 0;
+  float: left;
   width: 50%;
-  height: 80%;
-  z-index: -10;
+  height: 100%;
   display: grid;
   place-items: center;
 }
 
 .RightHalf {
-  position: absolute;
-  bottom: 5%;
-  right: 0;
+  float: right;
   width: 50%;
-  height: 80%;
-  z-index: -10;
+  height: 100%;
   display: grid;
   place-items: center;
 }
@@ -135,11 +131,19 @@ filter: invert();
   font-family: space;
   font-size: 50px;
   user-select: none;
+  background:
+    linear-gradient(to right, white, white),
+    linear-gradient(to right, var(--raisin-black), var(--raisin-black), var(--raisin-black));
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
   transition: 0.3s;
 }
 
 .Menu a:hover {
   font-size: 55px;
+  background-size: 0 0.1em, 100% 0.1em;
   transition: 0.3s;
 }
 
@@ -147,5 +151,60 @@ filter: invert();
   margin: 0;
   padding: 0;
   list-style: none;
+  text-align: center;
+}
+
+.General{
+  font-family: sora;
+  color: white;
+  font-size: 30px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+.Imagetitle{
+  font-family: Fancy;
+  text-align: center;
+  font-size: 80px;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 5px;
+  user-select: none;
+  background: linear-gradient(90deg, var(--red) 80%, var(--black) 80%, var(--black) 60%, var(--marigold) 60%, var(--marigold) 64%, var(--english-violet) 40%, var(--english-violet) 20%, var(--raisin-black) 20%);
+  background-size: 500% 100%;
+  background-repeat: no-repeat;
+  background-position: var(--g4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 100%;
+  height: 10%;
+}
+
+.pfp{
+  margin-top: 100px;
+  width: 50%;
+  border: 8px white solid;
+}
+
+.IndivAbout{
+
+padding-top: 100px;
+
+    font-family: sora;
+    color: white;
+    font-size: 30px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.Inspiration{
+  font-family: sora;
+  color: white;
+  font-size: 30px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }

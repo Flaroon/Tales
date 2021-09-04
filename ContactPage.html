@@ -7,6 +7,7 @@
 </head>
 
 <body onload="hide()" id="bg" style="opacity: 0">
+
   <h1 id="title" class="blur">Contact Us</h1>
   <div class="Menu">
     <ul>
@@ -19,28 +20,38 @@
     <img class="logo" src="images/logo.png">
   </div>
   <div class="RightHalf blur" id="rh">
-
-    <div class="container" id="bg" >
-      <form action="/action_page.php">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-
-        <label for="country">Country</label>
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-        <input type="submit" value="Submit">
-      </form>
-    </div>
+    <div id="container">
+      <form action="#" method="post" id="contact_form">
+        <div class="name">
+          <label for="name"></label>
+          <input type="text" placeholder="My name is" name="name" id="name_input" required>
+        </div>
+        <div class="email">
+          <label for="email"></label>
+          <input type="email" placeholder="My e-mail is" name="email" id="email_input" required>
+        </div>
+        <div class="telephone">
+          <label for="name"></label>
+          <input type="text" placeholder="My number is" name="telephone" id="telephone_input" required>
+        </div>
+        <div class="subject">
+          <label for="subject"></label>
+          <select placeholder="Subject line" name="subject" id="subject_input" required>
+            <option disabled hidden selected>Subject line</option>
+            <option>I'd like to start a project</option>
+            <option>I'd like to ask a question</option>
+            <option>I'd like to make a proposal</option>
+          </select>
+        </div>
+        <div class="message">
+          <label for="message"></label>
+          <textarea name="message" placeholder="I'd like to chat about" id="message_input" cols="30" rows="5" required></textarea>
+        </div>
+        <div class="submit">
+          <input type="submit" value="Send Message" id="form_button" />
+        </div>
+      </form><!-- // End form -->
+    </div><!-- // End #container -->
   </div>
 </body>
 
@@ -119,4 +130,9 @@
       menu.style.cursor="pointer";
     }
   }
+
+    function PlayAudio() {
+      var forestaudio = document.getElementById("Click");
+      forestaudio.play();
+    }
 </script>
