@@ -208,3 +208,18 @@ padding-top: 100px;
   margin-right: auto;
   text-align: center;
 }
+
+.Inspiration a{
+  text-decoration: none;
+
+  color: white;
+  background:
+    linear-gradient(to right, white, white),
+    linear-gradient(to right, var(--raisin-black), var(--raisin-black), var(--raisin-black));
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;}
+.Inspiration a:hover{
+  background-size: 0 0.1em, 100% 0.1em;
+}
