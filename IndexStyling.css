@@ -291,3 +291,11 @@ body h2 {
   list-style: none;
   text-align: center;
 }
+
+
+.imgs{
+  position: fixed;
+  top: 42.5%;
+  left: 42.4%;
+  width: 15%;
+}
